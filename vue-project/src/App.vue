@@ -3,21 +3,27 @@ export default {
   name: "App",
   data() {
     return {
-      name: "Nidheesh",
-      greet: "hello",
-      channel1: "Learning vue",
+      greet: "Hello",
+      name: "Arunlal",
+      channel1: "<b>Learning vue</b>",
+      hack: `<a href="#" onclick="alert('You have been blocked!')">win a prize!</a>`,
     };
   },
 };
 </script>
 
 <template>
-  <div>{{ greet }} {{ name }}{{channel1}}</div>
+  <div>{{ greet }} {{ name }}</div>
+  <div v-html="channel1"></div>
+  <div v-html="hack"></div>
 </template>;
-<style scoped>
-#App {
-  color: aquamarine;
+<style>
+#app {
+  color: black;
   margin-top: 60px;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  --webkit-font-smoothing: antialiased;
+  --mos-osx-font-smoothing: grayscale;
 }
 </style>
