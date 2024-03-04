@@ -43,21 +43,21 @@ export default {
   <div>{{ greet }} {{ name }}</div>
   <div v-html="channel1"></div>
   <div v-html="hack"></div>
-  <h2 v-bind:id="headingId">Heading</h2>
-  <button v-bind:disabled="isDisabled">bind</button>
+  <h2 :id="headingId">Heading</h2>
+  <button :disabled="isDisabled">bind</button>
   <h2 class="underline">Underlined text</h2>
-  <h2 class="underline" v-bind:class="status">status</h2>
-  <h2 v-bind:class="isPromoted && 'promoted'">Promoted Movie</h2>
-  <h2 v-bind:class="isSoldOut ? 'sold-out' : 'new'">Soldout? moview</h2>
-  <h2 v-bind:class="['new', 'promoted']">Newly promoted movie</h2>
-  <h2 v-bind:class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">
+  <h2 class="underline" :class="status">status</h2>
+  <h2 :class="isPromoted && 'promoted'">Promoted Movie</h2>
+  <h2 :class="isSoldOut ? 'sold-out' : 'new'">Soldout? moview</h2>
+  <h2 :class="['new', 'promoted']">Newly promoted movie</h2>
+  <h2 :class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">
     Array conditional movie
   </h2>
-  <h2 v-bind:class="{ promoted: true, new: !isSoldOut, 'sold-out': isSoldOut }">
+  <h2 :class="{ promoted: true, new: !isSoldOut, 'sold-out': isSoldOut }">
     Object conditional moview
   </h2>
   <h2
-    v-bind:style="{
+    :style="{
       color: highlightedColor,
       fontSize: headerSize + 'px',
       padding: '20px',
@@ -65,9 +65,9 @@ export default {
   >
     inline style
   </h2>
-  <div v-bind:style="headerStyleObject">Style object</div>
-  <div v-bind:style="[baseStyleObject, successStyleObject]">Success style</div>
-  <div v-bind:style="[baseStyleObject, dangerStyleObject]">Success style</div>
+  <div :style="headerStyleObject">Style object</div>
+  <div :style="[baseStyleObject, successStyleObject]">Success style</div>
+  <div :style="[baseStyleObject, dangerStyleObject]">Danger style</div>
 </template>;
 <style>
 #app {
