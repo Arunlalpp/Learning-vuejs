@@ -9,6 +9,7 @@ export default {
       hack: `<a href="#" onclick="alert('You have been blocked!')">win a prize!</a>`,
       headingId: "heading",
       isDisabled: false,
+      status: "danger",
     };
   },
 };
@@ -21,6 +22,7 @@ export default {
   <h2 v-bind:id="headingId">Heading</h2>
   <button v-bind:disabled="isDisabled">bind</button>
   <h2 class="underline">Underlined text</h2>
+  <h2 class="underline" v-bind:class="status">status</h2>
 </template>;
 <style>
 #app {
@@ -33,5 +35,6 @@ export default {
 }
 .underline {
   text-decoration: underline;
+  color: aqua;
 }
 </style>
