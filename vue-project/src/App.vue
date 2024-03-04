@@ -27,6 +27,13 @@ export default {
   <h2 class="underline" v-bind:class="status">status</h2>
   <h2 v-bind:class="isPromoted && 'promoted'">Promoted Movie</h2>
   <h2 v-bind:class="isSoldOut ? 'sold-out' : 'new'">Soldout? moview</h2>
+  <h2 v-bind:class="['new', 'promoted']">Newly promoted movie</h2>
+  <h2 v-bind:class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">
+    Array conditional movie
+  </h2>
+  <h2 v-bind:class="{ promoted: true, new: !isSoldOut, 'sold-out': isSoldOut }">
+    Object conditional moview
+  </h2>
 </template>;
 <style>
 #app {
