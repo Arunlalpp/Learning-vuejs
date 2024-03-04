@@ -7,6 +7,8 @@ export default {
       name: "Arunlal",
       channel1: "<b>Learning vue</b>",
       hack: `<a href="#" onclick="alert('You have been blocked!')">win a prize!</a>`,
+      headingId: "heading",
+      isDisabled: false,
     };
   },
 };
@@ -16,6 +18,9 @@ export default {
   <div>{{ greet }} {{ name }}</div>
   <div v-html="channel1"></div>
   <div v-html="hack"></div>
+  <h2 v-bind:id="headingId">Heading</h2>
+  <button v-bind:disabled="isDisabled">bind</button>
+  <h2 class="underline">Underlined text</h2>
 </template>;
 <style>
 #app {
@@ -25,5 +30,8 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   --webkit-font-smoothing: antialiased;
   --mos-osx-font-smoothing: grayscale;
+}
+.underline {
+  text-decoration: underline;
 }
 </style>
