@@ -16,8 +16,23 @@ export default {
       headerSize: 50,
       headerStyleObject: {
         color: "orange",
-        fontSize: "20px",
+        fontSize: "50px",
         padding: "20px",
+      },
+      baseStyleObject: {
+        fontSize: "50px",
+        padding: "10px",
+      },
+      successStyleObject: {
+        color: "green",
+        backgroundColor: "lightgreen",
+        border: "1px solid green",
+        padding: "20px",
+      },
+      dangerStyleObject: {
+        color: "darked",
+        backgroundColor: "red",
+        border: "1px solid darked",
       },
     };
   },
@@ -50,7 +65,9 @@ export default {
   >
     inline style
   </h2>
-  <h2 v-bind:style="headerStyleObject">Style object</h2>
+  <div v-bind:style="headerStyleObject">Style object</div>
+  <div v-bind:style="[baseStyleObject, successStyleObject]">Success style</div>
+  <div v-bind:style="[baseStyleObject, dangerStyleObject]">Success style</div>
 </template>;
 <style>
 #app {
