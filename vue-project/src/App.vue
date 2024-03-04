@@ -10,6 +10,8 @@ export default {
       headingId: "heading",
       isDisabled: false,
       status: "danger",
+      isPromoted: true,
+      isSoldOut: true,
     };
   },
 };
@@ -23,6 +25,8 @@ export default {
   <button v-bind:disabled="isDisabled">bind</button>
   <h2 class="underline">Underlined text</h2>
   <h2 class="underline" v-bind:class="status">status</h2>
+  <h2 v-bind:class="isPromoted && 'promoted'">Promoted Movie</h2>
+  <h2 v-bind:class="isSoldOut ? 'sold-out' : 'new'">Soldout? moview</h2>
 </template>;
 <style>
 #app {
@@ -36,5 +40,14 @@ export default {
 .underline {
   text-decoration: underline;
   color: aqua;
+}
+.promoted {
+  font-style: italic;
+}
+.new {
+  color: green;
+}
+.sold-out {
+  color: red;
 }
 </style>
