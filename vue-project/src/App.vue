@@ -12,6 +12,13 @@ export default {
       status: "danger",
       isPromoted: true,
       isSoldOut: true,
+      highlightedColor: "orange",
+      headerSize: 50,
+      headerStyleObject: {
+        color: "orange",
+        fontSize: "20px",
+        padding: "20px",
+      },
     };
   },
 };
@@ -34,6 +41,16 @@ export default {
   <h2 v-bind:class="{ promoted: true, new: !isSoldOut, 'sold-out': isSoldOut }">
     Object conditional moview
   </h2>
+  <h2
+    v-bind:style="{
+      color: highlightedColor,
+      fontSize: headerSize + 'px',
+      padding: '20px',
+    }"
+  >
+    inline style
+  </h2>
+  <h2 v-bind:style="headerStyleObject">Style object</h2>
 </template>;
 <style>
 #app {
