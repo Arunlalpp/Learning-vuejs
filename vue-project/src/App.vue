@@ -3,25 +3,33 @@ export default {
   name: "App",
   data() {
     return {
-      baseMultiplier: 5,
-      baseValue: 10,
+      name: "Arunlal PP",
+      count: 0,
     };
   },
-  // Functions are called methods
   methods: {
-    add(a, b, c) {
-      return a + b + c;
+    increment(num) {
+      return (this.count += num);
     },
-    multiply(num) {
-      return num * this.baseMultiplier;
+    decrement(num) {
+      return (this.count -= num);
     },
   },
 };
 </script>
 
 <template>
-  <h2>Add method - {{ add(1, 2, 3) }}</h2>
-  <h2>Multiply method - {{ multiply(baseValue) }}</h2>
+  <h2>{{ name }}</h2>
+  <div>
+    <button v-on:mouseover="name = 'PCP'">Change name</button>
+    <h2>{{ count }}</h2>
+    <div>
+      <button @click="increment(1)">Increment 1</button>
+      <button @click="increment(5)">Increment 5</button>
+      <button @click="decrement(1)">Decrement 1</button>
+      <button @click="decrement(5)">Decrement 5</button>
+    </div>
+  </div>
 </template>
 
 <style>
