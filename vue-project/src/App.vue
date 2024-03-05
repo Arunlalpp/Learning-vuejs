@@ -5,6 +5,7 @@ export default {
     return {
       num: 5,
       display: true,
+      showElement: true,
     };
   },
 };
@@ -21,6 +22,9 @@ export default {
     <h2>Vonnue</h2>
     <h2>Vue</h2>
   </template>
+
+  <h2 v-show="showElement">Using v-show</h2>
+  <h2 v-if="showElement">Using v-if</h2>
 </template>
 
 <style>
