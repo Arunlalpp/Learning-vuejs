@@ -8,12 +8,17 @@ export default {
     };
   },
   methods: {
-    increment(num) {
-      return (this.count += num);
+    increment(num, event) {
+      this.count += num;
+      console.log(event, "Event");
     },
     decrement(num) {
-      return (this.count -= num);
+      this.count -= num;
     },
+    changeName(event) {
+      this.name = "PCP";
+      console.log(event, "Event");
+    }, 
   },
 };
 </script>
@@ -21,10 +26,12 @@ export default {
 <template>
   <h2>{{ name }}</h2>
   <div>
-    <button v-on:mouseover="name = 'PCP'">Change name</button>
+    <button @click="changeName($event), increment(1, $event)">
+      Change name
+    </button>
     <h2>{{ count }}</h2>
     <div>
-      <button @click="increment(1)">Increment 1</button>
+      <button @click="increment(1, $event)">Increment 1</button>
       <button @click="increment(5)">Increment 5</button>
       <button @click="decrement(1)">Decrement 1</button>
       <button @click="decrement(5)">Decrement 5</button>
