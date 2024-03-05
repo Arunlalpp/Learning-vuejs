@@ -3,16 +3,25 @@ export default {
   name: "App",
   data() {
     return {
-      names: ["Arunlal", "pcp", "20sil_pcp"],
+      baseMultiplier: 5,
+      baseValue: 10,
     };
+  },
+  // Functions are called methods
+  methods: {
+    add(a, b, c) {
+      return a + b + c;
+    },
+    multiply(num) {
+      return num * this.baseMultiplier;
+    },
   },
 };
 </script>
 
 <template>
-  <template v-for="name in names" :key="name"
-    ><h2 v-if="name === 'pcp'">{{ name }}</h2></template
-  >
+  <h2>Add method - {{ add(1, 2, 3) }}</h2>
+  <h2>Multiply method - {{ multiply(baseValue) }}</h2>
 </template>
 
 <style>
