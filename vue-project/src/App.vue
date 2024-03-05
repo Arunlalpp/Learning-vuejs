@@ -3,72 +3,19 @@ export default {
   name: "App",
   data() {
     return {
-      greet: "Hello",
-      name: "Arunlal",
-      channel1: "<b>Learning vue</b>",
-      hack: `<a href="#" onclick="alert('You have been blocked!')">win a prize!</a>`,
-      headingId: "heading",
-      isDisabled: false,
-      status: "danger",
-      isPromoted: true,
-      isSoldOut: true,
-      highlightedColor: "orange",
-      headerSize: 50,
-      headerStyleObject: {
-        color: "orange",
-        fontSize: "50px",
-        padding: "20px",
-      },
-      baseStyleObject: {
-        fontSize: "50px",
-        padding: "10px",
-      },
-      successStyleObject: {
-        color: "green",
-        backgroundColor: "lightgreen",
-        border: "1px solid green",
-        padding: "20px",
-      },
-      dangerStyleObject: {
-        color: "darked",
-        backgroundColor: "red",
-        border: "1px solid darked",
-      },
+      num: 5,
     };
   },
 };
 </script>
 
 <template>
-  <div>{{ greet }} {{ name }}</div>
-  <div v-html="channel1"></div>
-  <div v-html="hack"></div>
-  <h2 :id="headingId">Heading</h2>
-  <button :disabled="isDisabled">bind</button>
-  <h2 class="underline">Underlined text</h2>
-  <h2 class="underline" :class="status">status</h2>
-  <h2 :class="isPromoted && 'promoted'">Promoted Movie</h2>
-  <h2 :class="isSoldOut ? 'sold-out' : 'new'">Soldout? moview</h2>
-  <h2 :class="['new', 'promoted']">Newly promoted movie</h2>
-  <h2 :class="[isPromoted && 'promoted', isSoldOut ? 'sold-out' : 'new']">
-    Array conditional movie
-  </h2>
-  <h2 :class="{ promoted: true, new: !isSoldOut, 'sold-out': isSoldOut }">
-    Object conditional moview
-  </h2>
-  <h2
-    :style="{
-      color: highlightedColor,
-      fontSize: headerSize + 'px',
-      padding: '20px',
-    }"
-  >
-    inline style
-  </h2>
-  <div :style="headerStyleObject">Style object</div>
-  <div :style="[baseStyleObject, successStyleObject]">Success style</div>
-  <div :style="[baseStyleObject, dangerStyleObject]">Danger style</div>
-</template>;
+  <h2 v-if="num === 0">The number is zero</h2>
+  <h2 v-else-if="num < 0">The number is negative</h2>
+  <h2 v-else-if="num > 0">The number is positive</h2>
+  <h2 v-else>Not a number</h2>
+</template>
+
 <style>
 #app {
   color: black;
@@ -77,6 +24,7 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   --webkit-font-smoothing: antialiased;
   --mos-osx-font-smoothing: grayscale;
+  margin-top: 60px;
 }
 .underline {
   text-decoration: underline;
