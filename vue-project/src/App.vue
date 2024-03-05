@@ -129,7 +129,7 @@ export default {
     <div>
       <label for="age">Age</label
       ><input
-        @keyup="submitForms"
+        @keyup.enter="submitForms"
         type="number"
         id="age"
         v-model="formValues.age"
