@@ -7,7 +7,7 @@
 </template>
 <script>
 export default {
-  name: 'Article',
+  name: `Article`,
   props: {
     title: {
       type: String,
