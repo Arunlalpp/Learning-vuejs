@@ -1,29 +1,21 @@
 <script>
-import Popup from './components/Popup.vue'
-
+import Input from './components/Input.vue'
 export default {
   name: 'App',
   components: {
-    Popup
+    // eslint-disable-next-line vue/no-reserved-component-names
+    Input
   },
   data() {
     return {
-      showPopup: false
+      name: ''
     }
   },
-  methods: {
-    closePopup(name) {
-      this.showPopup = false
-      console.log('Name', name)
-    }
-  }
+  methods: {}
 }
 </script>
 
-<template>
-  <button @click="showPopup = true">Show popup</button>
-  <Popup v-show="showPopup" @close="closePopup" />
-</template>
+<template><Input v-model="name" /></template>
 
 <style scoped>
 #app {
