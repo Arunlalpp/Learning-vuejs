@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Title- {{ title }}</h2>
+    <h2 v-bind="$attrs">Title- {{ title }}</h2>
     <h2>Likes- {{ likes }}</h2>
     <h2>Published- {{ isPublished ? 'Yes' : 'No' }}</h2>
   </div>
@@ -16,7 +16,8 @@ export default {
     },
     likes: Number,
     isPublished: Boolean
-  }
+  },
+  inheritAttr: true
 }
 </script>
 <style scoped>

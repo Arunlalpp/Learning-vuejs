@@ -19,7 +19,7 @@ export default {
 <template>
   <!-- <Greet name="PCP" heroName="ACTOR" /> -->
   <!-- <Greet :name="name" :heroName="channel" /> -->
-  <Articles title="sample" :likes="20" :isPublished="true" />
+  <Articles title="sample" :likes="20" :isPublished="true" id="my-article" />
 </template>
 
 <style scoped>
