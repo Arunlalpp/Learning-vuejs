@@ -1,10 +1,11 @@
 <script>
-import Greet from './components/Greet.vue'
+// import Greet from './components/Greet.vue'
+import Articles from './components/Articles.vue'
 
 export default {
   name: 'App',
   components: {
-    Greet
+    Articles
   },
   data() {
     return {
@@ -17,7 +18,8 @@ export default {
 
 <template>
   <!-- <Greet name="PCP" heroName="ACTOR" /> -->
-  <Greet :name="name" :heroName="channel" />
+  <!-- <Greet :name="name" :heroName="channel" /> -->
+  <Articles title="sample" :likes="20" :isPublished="true" />
 </template>
 
 <style scoped>
