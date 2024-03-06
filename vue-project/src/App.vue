@@ -3,150 +3,69 @@ export default {
   name: "App",
   data() {
     return {
-      formValues: {
-        name: "",
-        profileSummary: "",
-        country: "",
-        jobLocation: [],
-        remoteWork: "no",
-        skillSets: [],
-        yearsOfExperience: "",
-        age: null,
+      volume: 0,
+      movie: "Batman",
+      movieInfo: {
+        title: "",
+        actor: "",
       },
+      movieList: ["CID MOOSA", "PARAKKUMTHALIKKA"],
     };
   },
-  methods: {
-    submitForms(event) {
-      event.preventDefault();
-      console.log("form values", this.formValues);
+  methods: {},
+  computed: {},
+  watch: {
+    volume(newValue, oldValue) {
+      if (newValue > oldValue && newValue === 16) {
+        alert(
+          "Listening to hight volume for a long time may damage your gearing"
+        );
+      }
+    },
+    movie: {
+      handler(newValue) {
+        console.log(`Calling API with movie name =${newValue}`);
+      },
+      immediate: true,
+    },
+    movieInfo: {
+      handler(newValue) {
+        console.log(
+          `Calling API with movie title = ${newValue.title} and actor ${newValue.actor}`
+        );
+      },
+      deep: true,
+    },
+    movieList: {
+      handler(newValue) {
+        console.log(`Updated list ${newValue}`);
+      },
+      // deep: true,
     },
   },
 };
 </script>
 
 <template>
+  <h2>Volume tracker (0-20)</h2>
+  <h3>Current volume - {{ volume }}</h3>
   <div>
-    <pre>{{ JSON.stringify(formValues, null, 2) }}</pre>
+    <button @click="volume += 2">Increase</button>
+    <button @click="volume -= 2">Decrease</button>
   </div>
-  <form @submit="submitForms">
-    <div>
-      <label for="name">Name</label>
-      <input type="text" id="name" v-model.trim="formValues.name" />
-    </div>
-
-    <div>
-      <label for="profile">Profile Summary</label>
-      <textarea id="profile" v-model="formValues.profileSummary" />
-    </div>
-
-    <div>
-      <label for="country">Country</label>
-      <select id="country" v-model="formValues.country">
-        <option value="">Select a country</option>
-        <option value="india">India</option>
-        <option value="Vietnam">Vietnam</option>
-        <option value="Singapore">Singapore</option>
-      </select>
-    </div>
-
-    <div>
-      <label for="job-location">Job Location</label>
-      <select id="job-location" multiple v-model="formValues.jobLocation">
-        <option value="india">India</option>
-        <option value="Vietnam">Vietnam</option>
-        <option value="Singapore">Singapore</option>
-      </select>
-    </div>
-
-    <div>
-      <input
-        type="checkbox"
-        id="remoteWork"
-        v-model="formValues.remoteWork"
-        true-value="yes"
-        false-value="no"
-      />
-      <label for="remoteWork">Open to remote work</label>
-    </div>
-
-    <div>
-      <label>Skill set</label>
-      <input
-        type="checkbox"
-        id="html"
-        value="html"
-        v-model="formValues.skillSets"
-      />
-      <label for="html">HTML</label>
-      <input
-        type="checkbox"
-        value="css"
-        id="css"
-        v-model="formValues.skillSets"
-      />
-      <label for="css">CSS</label>
-      <input
-        type="checkbox"
-        value="javascript"
-        id="javascript"
-        v-model="formValues.skillSets"
-      />
-      <label for="javascript">Javascript</label>
-    </div>
-
-    <div>
-      <label for="">Years of experience</label>
-      <input
-        type="radio"
-        value="0-2"
-        id="0-2"
-        v-model="formValues.yearsOfExperience"
-      />
-      <label for="0-2">0-2</label>
-      <input
-        type="radio"
-        value="3-5"
-        id="3-5"
-        v-model="formValues.yearsOfExperience"
-      />
-      <label for="3-5">3-5</label>
-      <input
-        type="radio"
-        value="6-10"
-        id="6-10"
-        v-model="formValues.yearsOfExperience"
-      />
-      <label for="6-10">6-10</label>
-      <input
-        type="radio"
-        value="10+"
-        id="10+"
-        v-model="formValues.yearsOfExperience"
-      />
-      <label for="10+">10+</label>
-    </div>
-
-    <div>
-      <label for="age">Age</label
-      ><input
-        @keyup.enter="submitForms"
-        type="number"
-        id="age"
-        v-model="formValues.age"
-      />
-    </div>
-
-    <!-- <div>
-      <button>Submit</button>
-    </div> -->
-  </form>
+  <input type="text" name="" id="" v-model="movie" />
+  <input type="text" name="" id="" v-model="movieInfo.title" />
+  <input type="text" name="" id="" v-model="movieInfo.actor" />
+  <button @click="movieList = movieList.concat('[VINODAYATHRA]')">
+    Add movie
+  </button>
 </template>
 
 <style>
 #app {
   color: black;
   margin-top: 60px;
-  /* text-align: center; */
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   --webkit-font-smoothing: antialiased;
   --mos-osx-font-smoothing: grayscale;
