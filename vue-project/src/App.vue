@@ -33,10 +33,20 @@ export default {
         0
       );
     },
+    changeFullName() {
+      this.fullName = "Arunlal PCP";
+    },
   },
   computed: {
-    fullName() {
-      return `${this.firstName} ${this.lastName}`;
+    fullName: {
+      get() {
+        return `${this.firstName} ${this.lastName}`;
+      },
+      set(value) {
+        const names = value.split(" ");
+        this.firstName = names[0];
+        this.lastName = names[1];
+      },
     },
     total() {
       console.log("Total computed property");
@@ -53,14 +63,8 @@ export default {
 </script>
 
 <template>
-  <input type="text" name="country" id="country" v-model="country" />
-
-  <template v-for="item in items" :key="item.id">
-    <h2 v-if="item.price > 100">{{ item.title }} {{ item.price }}</h2>
-  </template>
-    <h2 v-for="item in expensiveItems" :key="item.id">
-      {{ item.title }} {{ item.price }}
-    </h2>
+  <h2>Computed fullName - {{ fullName }}</h2>
+  <button @click="changeFullName">Change fullName</button>
 </template>
 
 <style>
