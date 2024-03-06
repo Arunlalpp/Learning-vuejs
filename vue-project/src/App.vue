@@ -4,6 +4,12 @@ export default {
   data() {
     return {
       volume: 0,
+      movie: "Batman",
+      movieInfo: {
+        title: "",
+        actor: "",
+      },
+      movieList: ["CID MOOSA", "PARAKKUMTHALIKKA"],
     };
   },
   methods: {},
@@ -16,6 +22,26 @@ export default {
         );
       }
     },
+    movie: {
+      handler(newValue) {
+        console.log(`Calling API with movie name =${newValue}`);
+      },
+      immediate: true,
+    },
+    movieInfo: {
+      handler(newValue) {
+        console.log(
+          `Calling API with movie title = ${newValue.title} and actor ${newValue.actor}`
+        );
+      },
+      deep: true,
+    },
+    movieList: {
+      handler(newValue) {
+        console.log(`Updated list ${newValue}`);
+      },
+      // deep: true,
+    },
   },
 };
 </script>
@@ -27,6 +53,12 @@ export default {
     <button @click="volume += 2">Increase</button>
     <button @click="volume -= 2">Decrease</button>
   </div>
+  <input type="text" name="" id="" v-model="movie" />
+  <input type="text" name="" id="" v-model="movieInfo.title" />
+  <input type="text" name="" id="" v-model="movieInfo.actor" />
+  <button @click="movieList = movieList.concat('[VINODAYATHRA]')">
+    Add movie
+  </button>
 </template>
 
 <style>
