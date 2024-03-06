@@ -1,10 +1,10 @@
 <script>
-import Input from './components/Input.vue'
+import Card from './components/Card.vue'
+
 export default {
   name: 'App',
   components: {
-    // eslint-disable-next-line vue/no-reserved-component-names
-    Input
+    Card
   },
   data() {
     return {
@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<template><Input v-model="name" /></template>
+<template><Card>Content</Card> <Card>Content-2</Card></template>
 
 <style scoped>
 #app {
