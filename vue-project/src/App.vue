@@ -22,14 +22,24 @@ export default {
           price: 300,
         },
       ],
+      country: "",
     };
   },
-  methods: {},
+  methods: {
+    getTotal() {
+      console.log("getTotal method");
+      return this.items.reduce(
+        (total, curr) => (total = total + curr.price),
+        0
+      );
+    },
+  },
   computed: {
     fullName() {
       return `${this.firstName} ${this.lastName}`;
     },
     total() {
+      console.log("Total computed property");
       return this.items?.reduce(
         (total, curr) => (total = total + curr.price),
         0
@@ -44,9 +54,11 @@ export default {
     Total -
     {{ items.reduce((total, curr) => (total = total + curr.price), 0) }}
   </h2>
+  <h2>Total-{{ getTotal() }}</h2>
   <button @click="items.push({ id: 4, title: 'Keyboard', price: 400 })">
     Add item
   </button>
+  <input type="text" name="country" id="country" v-model="country" />
 </template>
 
 <style>
