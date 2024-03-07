@@ -1,12 +1,12 @@
-<template><PostList /></template>
+<template><Parent /></template>
 
 <script>
-import PostList from "./components/PostList.vue";
+import Parent from "./components/Parent.vue";
 
 export default {
   name: "App",
   components: {
-    PostList,
+    Parent,
   },
 };
 </script>
