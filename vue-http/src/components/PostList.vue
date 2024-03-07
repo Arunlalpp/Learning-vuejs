@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button @click="getPosts">Load Post</button>
-    <h3 v-if="errMessage">{{ errMessage }}</h3>
+    <!-- <button @click="getPosts">Load Posts</button> -->
+    <!-- <h3 v-if="errMessage">{{ errMessage }}</h3> -->
     <div v-for="post in posts" :key="post.id">
       <h3>{{ post.id }}. {{ post.title }}</h3>
       <p>{{ post.body }}</p>
@@ -13,6 +13,9 @@
 import axios from "axios";
 export default {
   name: "PortList",
+  created() {
+    this.getPosts();
+  },
   data() {
     return {
       posts: [],

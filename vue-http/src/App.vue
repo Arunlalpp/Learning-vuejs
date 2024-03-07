@@ -1,19 +1,22 @@
-<template><Parent /></template>
+<template>
+<PostList />
+</template>
 
 <script>
-import Parent from "./components/Parent.vue";
+import PostList from "./components/PostList.vue";
 
 export default {
   name: "App",
   components: {
-    Parent,
+    PostList,
   },
 };
 </script>
 
 <style>
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
