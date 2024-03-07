@@ -1,10 +1,14 @@
 <script>
-import NameList from './components/NameList.vue'
+import TabA from './components/TabA.vue'
+import TabB from './components/TabB.vue'
+import TabC from './components/TabC.vue'
 
 export default {
   name: 'App',
   components: {
-    NameList
+    TabA,
+    TabB,
+    TabC
   },
   data() {
     return {
@@ -16,24 +20,22 @@ export default {
 </script>
 
 <template>
-  <NameList>
-    <template v-slot:default="slotProps"
-      >{{ slotProps.firstName }} {{ slotProps.lastName }}</template
-    >
-  </NameList>
-  <NameList>
-    <template v-slot:default="slotProps"
-      >{{ slotProps.lastName }} {{ slotProps.firstName }}</template
-    >
-  </NameList>
-  <NameList>
-    <template v-slot:default="slotProps">{{ slotProps.firstName }}</template>
-  </NameList>
+  <button @click="activeTab = 'TabA'">Tab A</button>
+  <button @click="activeTab = 'TabB'">Tab B</button>
+  <button @click="activeTab = 'TabC'">Tab C</button>
+
+  <keep-alive>
+    <component :is="activeTab" />
+  </keep-alive>
+
+  <!-- <TabA v-if="activeTab === 'TabA'" />
+  <TabB v-if="activeTab === 'TabB'" />
+  <TabC v-if="activeTab === 'TabC'" /> -->
 </template>
 
 <style scoped>
 #app {
-  color: black;
+  color: #2c3e50;
   margin-top: 60px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -41,9 +43,8 @@ export default {
   --mos-osx-font-smoothing: grayscale;
   margin-top: 60px;
 }
-.img {
-  width: 200px;
-  height: 400px;
-  object-fit: cover;
+
+h4 {
+  color: orange;
 }
 </style>
