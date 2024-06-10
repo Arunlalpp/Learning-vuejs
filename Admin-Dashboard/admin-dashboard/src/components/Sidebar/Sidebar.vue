@@ -16,9 +16,9 @@
                 <span class="text">Home</span></router-link>
             <router-link class="button" to="/about"><span class="material-symbols-outlined">visibility</span>
                 <span class="text">About</span></router-link>
-            <router-link class="button" to="/about"><span class="material-symbols-outlined">group</span>
+            <router-link class="button" to="/team"><span class="material-symbols-outlined">group</span>
                 <span class="text">Team</span></router-link>
-            <router-link class="button" to="/about"><span class="material-symbols-outlined">email</span>
+            <router-link class="button" to="/contact"><span class="material-symbols-outlined">email</span>
                 <span class="text">Contact</span></router-link>
         </div>
 
