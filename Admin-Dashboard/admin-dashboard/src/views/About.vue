@@ -10,6 +10,9 @@
                 <button @click="incrementCount">Increment</button>
                 <button @click="decrementCount">Decrement</button>
                 <h2>{{ count }}</h2>
+                <button @click="state.count++">
+                    {{ state.count }}
+                </button>
             </div>
         </ul>
     </div>
@@ -18,10 +21,13 @@
 <script>
 import { useState } from '../components/Composables/State';
 import { dummyData } from '../data';
+import { reactive } from 'vue'
 
 export default {
     setup() {
         const [count, setCount] = useState(0)
+        const state = reactive({ count: 0 })
+
 
         const decrementCount = () => {
             if (count.value > 1) {
@@ -40,6 +46,7 @@ export default {
             setCount,
             decrementCount,
             incrementCount,
+            state
         };
     },
     data() {
