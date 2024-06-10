@@ -2,14 +2,12 @@
   <div class="app">
     <!-- SideBar -->
     <Sidebar />
-    <Header />
     <router-view />
   </div>
 </template>
 
 <script setup>
 import Sidebar from "./components/Sidebar/Sidebar.vue";
-import Header from "./components/Header/Header.vue";
 </script>
 
 <style lang="scss">
