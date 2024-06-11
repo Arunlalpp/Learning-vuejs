@@ -20,6 +20,10 @@
                 <span class="text">Team</span></router-link>
             <router-link class="button" to="/contact"><span class="material-symbols-outlined">email</span>
                 <span class="text">Contact</span></router-link>
+            <router-link class="button" to="/sample"><span class="material-symbols-outlined">email</span>
+                <span class="text">About</span></router-link>
+                <router-link class="button" to="/parentComponent"><span class="material-symbols-outlined">email</span>
+                    <span class="text">Mapping</span></router-link>
         </div>
 
         <div class="flex"></div>
