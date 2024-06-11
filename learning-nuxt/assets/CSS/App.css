@@ -5,4 +5,7 @@
 @import './main.css';
 
 /* Header styles */
-@import './header.css'
+@import './header.css';
+
+/* Carousel */
+@import './Carousel.css'
