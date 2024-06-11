@@ -11,7 +11,7 @@ const author = reactive({
 })
 
 const publishedBooksMessage = computed(() => {
-    return author.books.length > 2 ? 'Yes' : 'No'
+    return author.books.length > 0 ? 'Yes' : 'No'
 })
 </script>
 

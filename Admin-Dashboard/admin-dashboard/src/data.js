@@ -12,3 +12,22 @@ export const dummyData = [
     age: "22",
   },
 ];
+
+export const dummyChildComponentData = [
+  {
+    message: "Sample1",
+    count: 2,
+  },
+  {
+    message: "Sample2",
+    count: 3,
+  },
+  {
+    message: "Sample3",
+    count: 4,
+  },
+  {
+    message: "Sample4",
+    count: 5,
+  },
+];
