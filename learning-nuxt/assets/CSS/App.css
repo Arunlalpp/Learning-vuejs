@@ -1,0 +1,11 @@
+/* Color configure */
+@import './variables.css';
+
+/* body styles */
+@import './main.css';
+
+/* Header styles */
+@import './header.css';
+
+/* Carousel */
+@import './Carousel.css'
