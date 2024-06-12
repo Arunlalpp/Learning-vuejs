@@ -5,7 +5,14 @@
                 <img :src="card.imgUrl" :alt="card.title">
                 <div class="cardHeader">
                     {{ card.title }}
-                    <button type="button" @click="toggleDropdown(index)">></button>
+                    <button type="button" @click="toggleDropdown(index)">
+                        <template v-if="card.shouldShow">
+                            <ArrowUp />
+                        </template>
+                        <template v-else>
+                            <ArrowDown />
+                        </template>
+                    </button>
                 </div>
                 <transition name="fade">
                     <div v-if="card.shouldShow" class="dropdown-wrapper">
@@ -23,6 +30,8 @@
 <script setup>
 import { ref } from 'vue';
 import { useCardData } from '~/store/UseGetCard.ts'
+import ArrowDown from '~/assets/SVG/arrow-down.svg'
+import ArrowUp from '~/assets/SVG/up-arrow.svg'
 
 const cardStore = useCardData()
 const cards = ref(cardStore.items);
@@ -54,25 +63,19 @@ const toggleDropdown = (index) => {
 
 .cardHeader {
     padding: 8px;
-    background-color: lightgray;
+    background-color: yellowgreen;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #7b7979;
 
     button {
         outline: none;
         border: none;
         background-color: transparent;
         padding: 8px;
-        transform: rotate(90deg);
-        font-size: 18px;
-        color: white;
-        font-weight: 700;
-    }
-
-    button:focus {
-        transform: rotate(270deg);
-        transition: 0.2s;
+        width: 32px;
+        height: 32px;
     }
 }
 
@@ -82,6 +85,13 @@ const toggleDropdown = (index) => {
     transition: height 0.5s ease;
     max-height: 100px;
     overflow-y: auto;
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 23px;
+        color: var(--primary-color);
+    }
 }
 
 .fade-enter-active,
