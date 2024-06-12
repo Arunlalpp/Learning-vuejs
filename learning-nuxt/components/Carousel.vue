@@ -20,10 +20,11 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import CarouselItem from '~/components/CarouselItem.vue'
 import Thumbnail from '~/components/Thumbnail.vue'
-import { dummySliderData } from './assets/data/dummyData.ts'
+import { useSliderStore } from '~/store/UseGetSlider.ts';
 
-const items = ref(dummySliderData)
+const sliderStore = useSliderStore()
 
+const items = ref(sliderStore.items)
 const carouselDom = ref(null)
 const sliderDom = ref(null)
 const thumbnailBorderDom = ref(null)

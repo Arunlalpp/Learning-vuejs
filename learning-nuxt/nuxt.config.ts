@@ -6,5 +6,5 @@ export default defineNuxtConfig({
     "@": resolve(__dirname, "/"),
   },
   css: ["~/assets/CSS/App.css"],
-
+  plugins: ["~/plugins/pinia.ts"],
 });
