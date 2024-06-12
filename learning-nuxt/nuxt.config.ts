@@ -2,9 +2,12 @@
 import { resolve } from "path";
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   alias: {
     "@": resolve(__dirname, "/"),
   },
-  css: ["~/assets/CSS/App.css"],
 
+  css: ["~/assets/CSS/App.css"],
+  plugins: ["~/plugins/pinia.ts"],
+  modules: ["nuxt-svgo"]
 });

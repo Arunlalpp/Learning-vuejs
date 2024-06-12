@@ -1,6 +1,9 @@
 <template>
     <div>
-        <Header></Header>
-        <Carousel></Carousel>
+        <Header />
+        <div style="position: relative;">
+            <Carousel />
+        </div>
+        <Cards />
     </div>
 </template>
