@@ -9,11 +9,20 @@
     position: sticky;
     top: 0px;
     z-index: 99;
+    height: 4rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all ease-out .5s;
+    -moz-transition: all ease-out .5s;
+    -o-transition: all ease-out .5s;
+    transition: all ease-out .5s;
+
 
     nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        padding-top: 0.5rem;
     }
 
     ul {
@@ -27,7 +36,7 @@
 
     ul li a {
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 24px;
         color: var(--primary-color);
         text-decoration: none;
@@ -56,6 +65,28 @@
     a:hover::after,
     a:focus::after {
         transform: scale(1);
+    }
+}
+
+.active {
+    background-color: rgba(34, 34, 34, 0.8);
+    border-bottom: 3px solid #f1683a;
+
+    ul li a {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--secondary-color);
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 5px;
+    }
+
+    .logo {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--secondary-color);
+        line-height: 24px;
     }
 }
 
