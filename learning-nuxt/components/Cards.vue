@@ -20,7 +20,7 @@
                     </div>
                 </transition>
                 <div class="buttonWrapper">
-                    <button type="button">Show More</button>
+                    <button type="button">Show More Details</button>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
 import { ref } from 'vue';
 import { useCardData } from '~/store/UseGetCard.ts'
 import ArrowDown from '~/assets/SVG/arrow-down.svg'
-import ArrowUp from '~/assets/SVG/up-arrow.svg'
+import ArrowUp from '~/assets/SVG/down-arrow.svg'
 
 const cardStore = useCardData()
 const cards = ref(cardStore.items);
