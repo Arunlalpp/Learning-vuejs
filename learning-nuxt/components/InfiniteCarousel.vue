@@ -1,5 +1,5 @@
 <template>
-    <div class="slider">
+    <div class="slider" ref="slider">
         <div class="slides-track">
             <div class="slide" v-for="(image, index) in images" :key="index">
                 <img :src="image" alt="slider" />
@@ -8,28 +8,30 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'SliderComponent',
-    props: {
-        images: {
-            type: Array,
-            required: true
-        }
-    },
-    mounted() {
-        const slider = this.$el;
-        const slidesTrack = slider.querySelector('.slides-track');
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useEventListener } from '@vueuse/core'
 
-        slider.addEventListener('mouseover', () => {
-            slidesTrack.style.animationPlayState = 'paused';
-        });
-
-        slider.addEventListener('mouseout', () => {
-            slidesTrack.style.animationPlayState = 'running';
-        });
+const props = defineProps({
+    images: {
+        type: Array,
+        required: true
     }
-}
+})
+
+const slider = ref(null)
+
+onMounted(() => {
+    const slidesTrack = slider.value.querySelector('.slides-track')
+
+    useEventListener(slider.value, 'mouseover', () => {
+        slidesTrack.style.animationPlayState = 'paused'
+    })
+
+    useEventListener(slider.value, 'mouseout', () => {
+        slidesTrack.style.animationPlayState = 'running'
+    })
+})
 </script>
 
 <style scoped lang="scss">
@@ -68,7 +70,6 @@ export default {
     transform: rotateZ(180deg);
 }
 
-
 .slides-track {
     animation: scroll var(--animationSpeed) linear infinite;
     display: flex;
@@ -79,7 +80,6 @@ export default {
 .slide {
     height: var(--slideHeight);
     width: var(--slideWidth);
-    // filter: grayscale(100);
     overflow: hidden;
 }
 
