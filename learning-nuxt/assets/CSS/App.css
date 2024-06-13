@@ -8,4 +8,8 @@
 @import './header.css';
 
 /* Carousel */
-@import './Carousel.css'
+@import './Carousel.css';
+
+/* Login and Register */
+
+@import './LoginAndRegister.css'
