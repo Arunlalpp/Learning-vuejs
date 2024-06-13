@@ -5,16 +5,16 @@
                 <div class="logo">logo</div>
                 <ul>
                     <li>
-                        <NuxtLink to="#">Feature</NuxtLink>
+                        <NuxtLink to="/navlinks/Feature">Feature</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="#">About</NuxtLink>
+                        <NuxtLink to="/navlinks/About">About</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="#">Blogs</NuxtLink>
+                        <NuxtLink to="/navlinks/Blogs">Blogs</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="#">Contact</NuxtLink>
+                        <NuxtLink to="/navlinks/Contact">Contact</NuxtLink>
                     </li>
                 </ul>
             </nav>

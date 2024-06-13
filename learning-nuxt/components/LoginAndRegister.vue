@@ -1,36 +1,23 @@
 <template>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <div class="main-container">
         <div class="login-container" ref="container">
             <div class="form-container sign-up">
                 <form>
                     <h1>Create Account</h1>
-                    <div class="social-icons">
-                        <NuxtLink class="icon"><i class="fa-brands fa-google-plus-g"></i></NuxtLink>
-                        <NuxtLink class="icon"><i class="fa-brands fa-facebook-f"></i></NuxtLink>
-                        <NuxtLink class="icon"><i class="fa-brands fa-github"></i></NuxtLink>
-                        <NuxtLink class="icon"><i class="fa-brands fa-linkedin-in"></i></NuxtLink>
-                    </div>
-                    <span>or use your email for registration</span>
                     <input type="text" placeholder="Name" />
                     <input type="email" placeholder="Email" />
                     <input type="password" placeholder="Password" />
-                    <button>Sign Up</button>
+                    <NuxtLink to="/home"><button>Sign Up</button></NuxtLink>
                 </form>
             </div>
             <div class="form-container sign-in">
                 <form>
                     <h1>Sign In</h1>
-                    <div class="social-icons">
-                        <NuxtLink class="icon"><i class="fa-brands fa-google-plus-g"></i></NuxtLink>
-                        <NuxtLink class="icon"><i class="fa-brands fa-facebook-f"></i></NuxtLink>
-                        <NuxtLink class="icon"><i class="fa-brands fa-github"></i></NuxtLink>
-                        <NuxtLink class="icon"><i class="fa-brands fa-linkedin-in"></i></NuxtLink>
-                    </div>
-                    <span>or use your email password</span>
                     <input type="email" placeholder="Email" />
                     <input type="password" placeholder="Password" />
-                    <NuxtLink>Forget Your Password?</NuxtLink>
+                    <NuxtLink>
+                        <p class="forget-password">Forget Your Password?</p>
+                    </NuxtLink>
                     <NuxtLink to="/home"><button>Sign In</button></NuxtLink>
                 </form>
             </div>

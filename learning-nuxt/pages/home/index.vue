@@ -1,11 +1,11 @@
 <template>
-    <Header></Header>
+    <LazyHeader></LazyHeader>
     <div style="position: relative;">
-        <Carousel />
+        <LazyCarousel />
     </div>
     <Cards />
     <WrapperContainer>
-        <InfiniteCarousel :images="dummyImages" />
+        <LazyInfiniteCarousel :images="dummyImages" />
     </WrapperContainer>
 </template>
 
