@@ -4,10 +4,18 @@
             <nav>
                 <div class="logo">logo</div>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <NuxtLink to="/navlinks/Feature">Feature</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/navlinks/About">About</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/navlinks/Blogs">Blogs</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/navlinks/Contact">Contact</NuxtLink>
+                    </li>
                 </ul>
             </nav>
         </WrapperContainer>

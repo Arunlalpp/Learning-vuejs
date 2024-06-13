@@ -9,5 +9,17 @@ export default defineNuxtConfig({
 
   css: ["~/assets/CSS/App.css"],
   plugins: ["~/plugins/pinia.ts"],
-  modules: ["nuxt-svgo"]
+  modules: ["nuxt-svgo"],
+  app: {
+    /* Layout Transitions */
+    layoutTransition: {
+      name: "layout",
+      mode: "",
+    },
+    /* Page Transitions */
+    pageTransition: {
+      name: "page",
+      mode: "ease-in",
+    },
+  },
 });

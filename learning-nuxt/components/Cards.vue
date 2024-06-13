@@ -63,11 +63,10 @@ const toggleDropdown = (index) => {
 
 .cardHeader {
     padding: 8px;
-    background-color: yellowgreen;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #7b7979;
+    border-bottom: 0.5px solid #bfbcbc;
 
     button {
         outline: none;
@@ -81,7 +80,6 @@ const toggleDropdown = (index) => {
 
 .dropdown-wrapper {
     padding: 8px;
-    background-color: bisque;
     transition: height 0.5s ease;
     max-height: 100px;
     overflow-y: auto;
@@ -122,10 +120,10 @@ const toggleDropdown = (index) => {
         padding: 12px;
         outline: none;
         border: none;
-        color: white;
+        color: gray;
         font-size: 14px;
         font-weight: 600;
-        background-color: rgb(2, 58, 2);
+        background-color: transparent;
         border-radius: 25px;
         cursor: pointer;
     }
