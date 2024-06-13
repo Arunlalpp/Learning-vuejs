@@ -8,9 +8,8 @@
       <Thumbnail v-for="(item, index) in items" :key="index" :image="item.image" />
     </div>
     <div class="arrows">
-      <button id="prev" @click="showSlider('prev')">
-        <</button>
-          <button id="next" @click="showSlider('next')">></button>
+      <button id="prev" @click="showSlider('prev')">&lt;</button>
+      <button id="next" @click="showSlider('next')">&gt;</button>
     </div>
     <div class="time" ref="timeDom"></div>
   </div>
@@ -18,9 +17,10 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useEventListener } from '@vueuse/core'
 import CarouselItem from '~/components/CarouselItem.vue'
 import Thumbnail from '~/components/Thumbnail.vue'
-import { useSliderStore } from '~/store/UseGetSlider.ts';
+import { useSliderStore } from '~/store/UseGetSlider.ts'
 
 const sliderStore = useSliderStore()
 
@@ -29,10 +29,18 @@ const carouselDom = ref(null)
 const sliderDom = ref(null)
 const thumbnailBorderDom = ref(null)
 const timeDom = ref(null)
-let runTimeOut
-let runNextAuto
+
 const timeRunning = 3000
 const timeAutoNext = 7000
+let runTimeOut = null
+let runNextAuto = null
+
+const resetAutoSlide = () => {
+  clearTimeout(runNextAuto)
+  runNextAuto = setTimeout(() => {
+    showSlider('next')
+  }, timeAutoNext)
+}
 
 const showSlider = (type) => {
   const sliderItemsDom = sliderDom.value.querySelectorAll('.item')
@@ -54,20 +62,21 @@ const showSlider = (type) => {
     carouselDom.value.classList.remove('prev')
   }, timeRunning)
 
-  clearTimeout(runNextAuto)
-  runNextAuto = setTimeout(() => {
-    showSlider('next')
-  }, timeAutoNext)
+  resetAutoSlide()
 }
 
 onMounted(() => {
-  runNextAuto = setTimeout(() => {
-    showSlider('next')
-  }, timeAutoNext)
+  resetAutoSlide()
 })
 
 onBeforeUnmount(() => {
   clearTimeout(runTimeOut)
   clearTimeout(runNextAuto)
 })
+
+useEventListener(carouselDom, 'mouseover', () => {
+  clearTimeout(runNextAuto)
+})
+
+useEventListener(carouselDom, 'mouseout', resetAutoSlide)
 </script>

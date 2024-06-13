@@ -37,7 +37,7 @@
 //   },
 // };
 
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref } from 'vue';
 import { useEventListener } from '@vueuse/core';
 
 const isActive = ref(false);
