@@ -1,6 +1,10 @@
 <template>
+    <Header></Header>
     <WrapperContainer>
-        <div class="grid-container">
+        <div class="refreshButton">
+            <button type="button" @click="handleRefresh" :disabled="isLoading">Refresh</button>
+        </div>
+        <div class="grid-container" v-if="!isLoading">
             <div v-for="(item, index) in products" :key="index">
                 <ProductCard :product="item" />
             </div>
@@ -10,13 +14,36 @@
 
 
 <script setup>
-import { useFetch } from 'nuxt/app';
-import ProductCard from '~/components/ProductCards.vue'
+import { ref } from 'vue';
+import ProductCard from '~/components/ProductCards.vue';
 
-const { data: products } = await useFetch('https://fakestoreapi.com/products')
+const products = ref([]);
+const isLoading = ref(true);
+
+const fetchData = async () => {
+    isLoading.value = true;
+    try {
+        const response = await fetch('https://fakestoreapi.com/products');
+        const data = await response.json();
+        products.value = data;
+    } catch (error) {
+        console.error('Error fetching products:', error);
+    } finally {
+        isLoading.value = false;
+    }
+};
+
+const handleRefresh = async () => {
+    await fetchData();
+};
+
+onMounted(() => {
+    fetchData();
+});
+
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .grid-container {
     display: grid;
     gap: 10px;
@@ -24,5 +51,24 @@ const { data: products } = await useFetch('https://fakestoreapi.com/products')
     width: 90%;
     max-width: 1200px;
     margin: auto;
+    padding-top: 2rem;
+}
+
+.refreshButton {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+
+    button {
+        width: 20%;
+        height: 2.5rem;
+        padding: 0.5rem;
+        outline: none;
+        border: none;
+        color: var(--secondary-color);
+        font-weight: 600;
+        background-color: var(--primary-color);
+        border-radius: 10px;
+    }
 }
 </style>

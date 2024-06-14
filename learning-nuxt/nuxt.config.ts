@@ -2,6 +2,11 @@ import { resolve } from "path";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL || "sampleApi",
+    },
+  },
 
   alias: {
     "@": resolve(__dirname, "/"),
@@ -36,7 +41,7 @@ export default defineNuxtConfig({
     },
     pageTransition: {
       name: "page",
-      mode: "ease-in",
+      mode: "",
     },
   },
 });

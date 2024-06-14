@@ -31,7 +31,7 @@ const { product } = defineProps(['product'])
     img {
         max-width: 400px;
         object-fit: contain;
-        mix-blend-mode: multiply;
+        mix-blend-mode: darken;
     }
 }
 </style>

@@ -1,0 +1,1 @@
+import { useGetProductDetails } from "./UseGetProductData";
