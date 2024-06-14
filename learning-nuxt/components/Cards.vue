@@ -2,7 +2,7 @@
     <WrapperContainer>
         <div class="grid-container">
             <div v-for="(card, index) in cards" :key="index" class="card">
-                <NuxtImg :src="card.imgUrl" :alt="card.title" width="600" height="400"
+                <NuxtImg :src="card.imgUrl" :alt="card.title" width="600" height="800"
                     :modifiers="{ quality: 90, format: 'webp' }" />
                 <div class="cardHeader">
                     {{ card.title }}
@@ -21,7 +21,7 @@
                     </div>
                 </transition>
                 <div class="buttonWrapper">
-                    <button type="button">Show More Details</button>
+                    <NuxtLink to="/products"><button type="button">Show More Details</button></NuxtLink>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@ const toggleDropdown = (index) => {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .grid-container {
     display: grid;
     gap: 10px;
