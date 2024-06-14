@@ -2,7 +2,8 @@
     <WrapperContainer>
         <div class="grid-container">
             <div v-for="(card, index) in cards" :key="index" class="card">
-                <NuxtImg :src="card.imgUrl" :alt="card.title" width="600" height="400" />
+                <NuxtImg :src="card.imgUrl" :alt="card.title" width="600" height="400"
+                    :modifiers="{ quality: 90, format: 'webp' }" />
                 <div class="cardHeader">
                     {{ card.title }}
                     <button type="button" @click="toggleDropdown(index)">
