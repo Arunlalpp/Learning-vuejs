@@ -1,6 +1,6 @@
 <template>
     <div class="item">
-        <img :src="image" />
+        <NuxtImg :src="image" />
         <div class="content">
             <div class="title">Name Slider</div>
             <div class="description">Description</div>

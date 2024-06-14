@@ -2,7 +2,7 @@
     <div class="slider" ref="slider">
         <div class="slides-track">
             <div class="slide" v-for="(image, index) in images" :key="index">
-                <img :src="image" alt="slider" />
+                <NuxtImg :src="image" alt="slider" />
             </div>
         </div>
     </div>

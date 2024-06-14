@@ -1,6 +1,7 @@
 <template>
     <div class="item">
-        <img :src="image" />
+        <NuxtImg :src="image" 
+        />
         <div class="content">
             <div class="author">{{ author }}</div>
             <div class="title">{{ title }}</div>
