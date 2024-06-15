@@ -1,7 +1,8 @@
 <script setup>
 definePageMeta({
-  pageTransition: { name: "rotate" }
-  // layout: 'orange'
+  pageTransition: { name: "rotate" },
+  layout: 'CustomLayout'
+
 })
 
 </script>
