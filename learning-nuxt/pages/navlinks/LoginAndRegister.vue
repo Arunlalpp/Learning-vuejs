@@ -72,6 +72,7 @@ export default {
 };
 
 definePageMeta({
-    layout: false
+    layout: false,
+
 })
 </script>
