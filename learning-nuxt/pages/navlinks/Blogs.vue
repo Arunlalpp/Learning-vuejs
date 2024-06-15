@@ -1,16 +1,13 @@
-<template>
-    <!-- <div v-if="$route.params.id">
-        <NuxtLink :to="prev">Prev</NuxtLink>
-        <NuxtLink :to="next">Next</NuxtLink>
-    </div> -->
-    Blogs
+<template lang="">
+    <div>
+        Blog
+    </div>
 </template>
-<!-- <script>
-import { useRoute } from 'vue-router';
+<script>
+export default {
 
-const route = useRoute();
-const id = computed(() => route.params.id || 1)
-const prev = computed(() => "/navlinks/Blogs/" + (id.value - 1))
-const next = computed(() => "/navlinks/Blogs/" + (id.value + 1))
-</script> -->
-<style></style>
+}
+</script>
+<style lang="">
+
+</style>

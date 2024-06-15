@@ -11,5 +11,7 @@
 @import './Carousel.css';
 
 /* Login and Register */
+@import './LoginAndRegister.css';
 
-@import './LoginAndRegister.css'
+/* Footer */
+@import './footer.css'

@@ -7,7 +7,7 @@
                     <input type="text" placeholder="Name" />
                     <input type="email" placeholder="Email" />
                     <input type="password" placeholder="Password" />
-                    <NuxtLink to="/home"><button>Sign Up</button></NuxtLink>
+                    <NuxtLink to="/"><button>Sign Up</button></NuxtLink>
                 </form>
             </div>
             <div class="form-container sign-in">
@@ -18,7 +18,7 @@
                     <NuxtLink>
                         <p class="forget-password">Forget Your Password?</p>
                     </NuxtLink>
-                    <NuxtLink to="/home"><button>Sign In</button></NuxtLink>
+                    <NuxtLink to="/"><button>Sign In</button></NuxtLink>
                 </form>
             </div>
             <div class="toggle-container">

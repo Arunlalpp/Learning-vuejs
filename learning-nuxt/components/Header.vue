@@ -2,7 +2,11 @@
     <header class="container" :class="{ active: isActive }">
         <WrapperContainer>
             <nav>
-                <div class="logo">logo</div>
+                <NuxtLink to="/" class="logo">
+                    <NuxtImg
+                        src="https://img.freepik.com/free-vector/logotype_23-2148144447.jpg?t=st=1718424759~exp=1718428359~hmac=3bf9d7c39ec6c286c0b255e65ccabfff3db461f7122b6a04e910971cd85c7914&w=740"
+                        height="40" width="40" />
+                </NuxtLink>
                 <ul>
                     <li>
                         <NuxtLink to="/navlinks/Feature">Feature</NuxtLink>
@@ -15,6 +19,9 @@
                     </li>
                     <li>
                         <NuxtLink to="/navlinks/Contact">Contact</NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink to="/navlinks/LoginAndRegister">Sign In</NuxtLink>
                     </li>
                 </ul>
             </nav>

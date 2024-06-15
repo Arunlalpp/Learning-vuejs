@@ -1,5 +1,4 @@
 <template>
-    <Header></Header>
     <WrapperContainer>
         <div class="refreshButton">
             <button type="button" @click="handleRefresh" :disabled="isLoading">Refresh</button>
@@ -40,6 +39,10 @@ const handleRefresh = async () => {
 onMounted(() => {
     fetchData();
 });
+
+definePageMeta({
+    layout: 'products'
+})
 
 </script>
 
