@@ -21,7 +21,8 @@
                     </div>
                 </transition>
                 <div class="buttonWrapper">
-                    <NuxtLink to="/products"><button type="button">Show More Details</button></NuxtLink>
+                    <NuxtLink to="/products"><button type="button">Show More Details</button>
+                    </NuxtLink>
                 </div>
             </div>
         </div>
@@ -40,6 +41,10 @@ const cards = ref(cardStore.items);
 const toggleDropdown = (index) => {
     cards.value[index].shouldShow = !cards.value[index].shouldShow;
 }
+
+// const scrollTop = () => {
+//     window.scrollTo(0, 0)
+// }
 </script>
 
 <style lang="scss" scoped>

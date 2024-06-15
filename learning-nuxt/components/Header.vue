@@ -21,7 +21,7 @@
                         <NuxtLink to="/navlinks/Contact">Contact</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="/navlinks/LoginAndRegister">Sign In</NuxtLink>
+                        <NuxtLink to="/navlinks/loginandregister">Sign In</NuxtLink>
                     </li>
                 </ul>
             </nav>

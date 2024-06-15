@@ -7,7 +7,6 @@ export default defineNuxtConfig({
       apiBaseUrl: process.env.API_BASE_URL || "sampleApi",
     },
   },
-
   alias: {
     "@": resolve(__dirname, "/"),
   },

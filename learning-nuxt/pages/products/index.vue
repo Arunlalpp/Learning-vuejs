@@ -41,7 +41,19 @@ onMounted(() => {
 });
 
 definePageMeta({
-    layout: 'products'
+    layout: 'products',
+    // pageAnimation: false,
+    // layoutAnimation: false,
+    // scrollToTop: false, //disable this option in component
+
+    // transition: {
+    //     name: "sample",
+    //     mode: "in-out",
+    //     afterEnter(el) {
+    //         // reset scroll position
+    //         document.documentElement.scrollTop = 0;
+    //     }
+    // }
 })
 
 </script>
@@ -73,5 +85,17 @@ definePageMeta({
         background-color: var(--primary-color);
         border-radius: 10px;
     }
+}
+
+.sample-enter-active,
+.sample-leave-active {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    z-index: 200;
 }
 </style>
