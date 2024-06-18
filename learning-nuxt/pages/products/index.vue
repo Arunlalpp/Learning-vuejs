@@ -41,7 +41,7 @@ onMounted(() => {
 });
 
 definePageMeta({
-    layout: 'products'
+    layout: 'products',
 })
 
 </script>

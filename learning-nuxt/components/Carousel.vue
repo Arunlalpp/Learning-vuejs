@@ -20,18 +20,27 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useEventListener } from '@vueuse/core'
 import CarouselItem from '~/components/CarouselItem.vue'
 import Thumbnail from '~/components/Thumbnail.vue'
-import { useSliderStore } from '~/store/UseGetSlider.ts'
 
-const sliderStore = useSliderStore()
+const props = defineProps({
+  items: {
+    type: Array,
+    required: true
+  },
+  timeRunning: {
+    type: Number,
+    default: 3000
+  },
+  timeAutoNext: {
+    type: Number,
+    default: 7000
+  }
+})
 
-const items = ref(sliderStore.items)
 const carouselDom = ref(null)
 const sliderDom = ref(null)
 const thumbnailBorderDom = ref(null)
 const timeDom = ref(null)
 
-const timeRunning = 3000
-const timeAutoNext = 7000
 let runTimeOut = null
 let runNextAuto = null
 
@@ -39,7 +48,7 @@ const resetAutoSlide = () => {
   clearTimeout(runNextAuto)
   runNextAuto = setTimeout(() => {
     showSlider('next')
-  }, timeAutoNext)
+  }, props.timeAutoNext)
 }
 
 const showSlider = (type) => {
@@ -60,7 +69,7 @@ const showSlider = (type) => {
   runTimeOut = setTimeout(() => {
     carouselDom.value.classList.remove('next')
     carouselDom.value.classList.remove('prev')
-  }, timeRunning)
+  }, props.timeRunning)
 
   resetAutoSlide()
 }
@@ -80,3 +89,6 @@ useEventListener(carouselDom, 'mouseover', () => {
 
 useEventListener(carouselDom, 'mouseout', resetAutoSlide)
 </script>
+
+<style scoped>
+</style>
