@@ -2,7 +2,7 @@
     <Header></Header>
 
     <!-- output the page content -->
-    <div>
+    <div style="overflow:hidden">
         <slot />
         <Footer />
     </div>

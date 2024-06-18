@@ -98,10 +98,6 @@ export default {
 </script>
 
 <style lang="css">
-section {
-    background-color: red;
-}
-
 .testim .wrap {
     position: relative;
     width: 100%;
@@ -111,7 +107,6 @@ section {
 }
 
 .testim .arrow {
-    display: block;
     position: absolute;
     color: #eee;
     cursor: pointer;
@@ -127,10 +122,10 @@ section {
     -moz-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    padding: 5px;
+    padding: 15px;
     z-index: 22222222;
-    background-color: #eee;
-    padding: 5px;
+    background-color: rgb(102, 96, 96);
+    border-radius: 50%;
 }
 
 .testim .arrow:before {
